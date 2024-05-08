@@ -1,0 +1,13 @@
+{
+    "site": {
+      "title": "Mon super site web !",
+      "description": "Voici la description de mon super site web !"
+    },
+    "home": {
+      "title": "EN!!! Bienvenue sur mon super site web !",
+      "subtitle": "EN: <strong>Ceci est</strong> <a href='credits' class='underline'>Credits</a>!"
+    },
+    "credits":{
+      "title":"en"
+    }
+  }

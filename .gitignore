@@ -1,0 +1,21 @@
+# Archivos temporales
+*~
+
+# Archivos de respaldo
+*.bak
+*.backup
+
+# Archivos de compilación
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Archivos de registro y salida
+*.log
+*.out
+
+# Carpetas y archivos de dependencias generados
+node_modules/
+vendor/

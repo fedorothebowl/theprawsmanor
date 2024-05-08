@@ -1,0 +1,13 @@
+{
+    "site": {
+      "title": "My awesome website!",
+      "description": "Here is the description of my awesome website!"
+    },
+    "home": {
+      "title": "ciao! Welcome t1o my awesome website!",
+      "subtitle": "IT: <strong>Ceci est</strong> <a href='/credits' class='underline'>Credits</a>!"
+    },
+    "credits":{
+      "title":"it"
+    }
+  }

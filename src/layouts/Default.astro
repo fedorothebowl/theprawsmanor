@@ -1,0 +1,43 @@
+---
+import i18next, { t } from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
+
+import '../assets/css/main.scss';
+// npx astro-i18next generate
+---
+
+<!doctype html>
+
+<html lang={i18next.language}>
+
+	<head>
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{t("site.title")}</title>
+		<meta name="description" content={t("site.description")} />
+		<HeadHrefLangs />
+
+		<!-- Favicon -->
+		<!-- <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/src/assets/favicon/site.webmanifest">
+        <link rel="mask-icon" href="/src/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/src/assets/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="/src/assets/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff"> -->
+
+	</head>
+
+	<body>
+		<slot />
+		<script src="/src/assets/js/main.js"></script>
+	</body>
+
+</html>
+
+<style is:global>
+
+</style>
