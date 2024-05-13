@@ -2,10 +2,98 @@
 import Layout from "../layouts/Default.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Hero from "../components/pages/hero.astro";
 ---
 
 <Layout>
     <Header />
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro tempore neque quidem, natus soluta iure repudiandae possimus quaerat consectetur sint minima quas aspernatur deleniti laborum cumque commodi tempora harum est.
+    <Hero img="/images/three-god.jpg" subtitle="Audiliobro" title="La leggenda dei 4" alt="Illustrazione dell'audiolibro"/>
+    
+    <div class="prawns-container lg:mb-40">
+        <p>Caro Avventuriero, se sei in procinto di leggere questa avventura, c'è una cosa che devi sapere riguardo al contenuto di quest'opera. 
+            La storia che si andrà a sviluppare nelle prossime pagine è stata scritta dopo aver giocato di ruolo in un mondo già esistente (subito riconoscibile) da cui abbiamo preso l'ambientazione e la storia di fondo, per poi aggiungerci i nostri personaggi e le nostre storie, trasformandola infine, come spesso accade nei GDR, in qualcosa di romanticamente personale. 
+            Tutto questo preambolo per dirvi che l'avventura che andrete a leggere avrà sì come sfondo una storia che magari già conoscete, ma che questo non deve spaventarvi nè deludervi, perchè il focus sarà sui personaggi e sulle loro vicende, entrambi presentati, come ogni buona campagna vuole, prima dell'inizio di tutto.</p>
+    </div>
+
+    <section class="prawns-container mb-40" x-data="Audiolibro();" x-init="loadPosts(2, 0)" id="audiolibro">
+
+        <strong class="uppercase text-[16px] block pb-2">Avanzamento <span x-text="statusAvanzamento"></span>/<span x-text="numOfPosts+1"></span></strong>
+        <div class="divide-y divide-white  border-b border-white">
+            
+            <template x-for="(book, index) in books">
+                <div class="flex align-items-baseline cursor-pointer opacity-50 hover:opacity-100" data-book 
+                    x-init="currentIndex = index + 1;" 
+                    @click="openBook();" 
+                    :class="statusAvanzamento+1 > index && '!opacity-100' ">
+                    
+                    <div class="p-2.5 hidden w-0 h-0" data-image>
+                        <img :src="book.imageUrl" alt="" class="w-full">
+                    </div>
+
+                    <h3 class="w-[325px] uppercase text-[32px] transition-all duration-300 whitespace-nowrap pr-4" data-title><strong class="extra" x-text="book.title"></strong></h3>
+                    
+                    <div class="flex flex-col">
+                        <div class="w-auto">
+                            <h4 class="transition-all duration-300" data-description>
+                                <span class="line-clamp-1 translate-y-[9px]" x-text="book.description"></span>
+                            </h4>
+                        </div>
+    
+                        <div class="w-full h-max hidden mt-auto pb-2.5" data-audio  x-data="Audio(currentIndex-1);">
+                            <div>
+
+                                <div class="flex items-start" :class="!showAudio && 'opacity-0 pointer-events-none' ">
+                                    <audio controls controlsList="nodownload" class="mr-auto mt-auto" x-ref="audioplayer">
+                                        <source :src="book.audioUrl" type="audio/mpeg">
+                                    </audio>
+                                </div>
+        
+                                <button class="items-center space-x-4 hidden text-c-orange" x-bind="button" x-show="!showAudio" data-play>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+                                        <g id="Raggruppa_23" data-name="Raggruppa 23" transform="translate(-526 -957)">
+                                            <g id="Ellisse_1" data-name="Ellisse 1" transform="translate(526 957)" fill="none" stroke="#e17227" stroke-width="2">
+                                            <circle cx="15.5" cy="15.5" r="15.5" stroke="none"/>
+                                            <circle cx="15.5" cy="15.5" r="14.5" fill="none"/>
+                                            </g>
+                                            <path id="Tracciato_15" data-name="Tracciato 15" d="M7.407.716a1.438,1.438,0,0,1,2.488,0L17.1,13.134a1.438,1.438,0,0,1-1.244,2.161H1.44A1.438,1.438,0,0,1,.2,13.134Z" transform="translate(551.025 963.849) rotate(90)" fill="#e17227"/>
+                                        </g>
+                                        </svg>
+                                    <strong class="uppercase extra text-[16px]">Ascolta ora</strong>
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </template>
+
+            <!-- <div role="status" x-show="loader">
+                <div class="grid place-items-center py-16">
+                    <svg aria-hidden="true" class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                    </svg>
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div> -->
+
+        </div>
+
+        <div x-show="showMessage" x-transition>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aliquam tempore ea repellendus sequi rerum beatae, excepturi asperiores saepe reiciendis quo repudiandae ipsum aliquid impedit praesentium maiores quibusdam, doloremque sapiente.
+        </div>
+
+        <div class="grid place-items-center" x-show="!hideBtn">
+            <button class="text-[16px] uppercase py-4" x-bind="loadMore">
+                Carica altri capitoli
+            </button>
+        </div>
+
+    </section>
+
     <Footer />
 </Layout>

@@ -2,10 +2,20 @@
 import Layout from "../layouts/Default.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Hero from "../components/pages/hero.astro";
 ---
 
 <Layout>
     <Header />
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro tempore neque quidem, natus soluta iure repudiandae possimus quaerat consectetur sint minima quas aspernatur deleniti laborum cumque commodi tempora harum est.
+
+    <Hero img="/images/crew.jpg" subtitle="The Prawn's Manor" title="Chi siamo" alt="Illustrazione dei membri di prawns manor"/>
+    
+    <section class="prawns-container">
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+            <p class="sticky top-[52px] h-max">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate doloremque quae aspernatur, sunt dignissimos vitae odit architecto inventore laboriosam enim assumenda reprehenderit nulla dolorem qui reiciendis aliquam, suscipit odio! Rerum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate doloremque quae aspernatur, sunt dignissimos vitae odit architecto inventore laboriosam enim assumenda reprehenderit nulla dolorem qui reiciendis aliquam, suscipit odio! Rerum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate doloremque quae aspernatur, sunt dignissimos vitae odit architecto inventore laboriosam enim assumenda reprehenderit nulla dolorem qui reiciendis aliquam, suscipit odio! Rerum!</p>
+            <img src="images/warrior.jpg" alt="Illustrazione di un guerriero" class="mt-auto w-full pt-80">
+        </div>
+    </section>
+    
     <Footer />
 </Layout>

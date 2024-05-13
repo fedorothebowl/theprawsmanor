@@ -12,7 +12,7 @@
     }
     .prawns{
         &-container{
-            @apply lg:px-4 px-2.5;
+            @apply lg:px-4 px-2.5 max-w-7xl mx-auto;
         }
         &-header-hero-homepage{
             height: calc(100vh - 60px);
@@ -30,4 +30,58 @@
             @apply bg-c-blue border border-white text-[16px] leading-none rounded-full rounded-tl-none uppercase pt-[6px] pb-[9px] px-[25px] hover:text-c-blue hover:bg-white inline-block;
         }
     }
+
+    header{
+        nav{
+            .prawns-active-menu{
+                &::after{
+                    content: "";
+                    width: 105%!important;
+                }
+            }
+            li:not(.not-this){
+                @apply relative;
+                &::after{
+                    content: "";
+                    @apply absolute -left-0.5 bottom-0 h-[2px] bg-c-orange inline-block w-0 rounded-full transition-all duration-300;
+                    &:hover{
+                        @apply  w-[105%]
+                    }
+                }
+            }
+        }
+    }
+
+    #audiolibro{
+        .active{
+
+            [data-title]{
+                transform: translateX(325px);
+                @apply absolute text-c-orange;
+            }
+
+            [data-description]{
+                transform: translateY(45px);
+                @apply place-content-start h-max;
+                span{
+                    @apply line-clamp-none;
+
+                }
+            }
+
+            [data-image]{
+                @apply w-[325px] min-w-[325px] block h-full z-10;
+            }
+
+            [data-play]{
+                @apply flex;
+            }
+
+            [data-audio]{
+                @apply flex;
+            }
+
+        }
+    }
+
 }
