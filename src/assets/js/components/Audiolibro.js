@@ -9,9 +9,13 @@ export default () => {
     hideBtn: false,
     statusAvanzamento:0,
     showMessage : false,
-    init() {
+
+    async init() {
+        
+        await this.openNext();
+
         document.addEventListener('endAudio', (e) => {
-            console.log('L\'audio è finito n.' + e.detail.index);
+            // console.log('L\'audio è finito n.' + e.detail.index);
             this.statusAvanzamento = e.detail.index + 1;
             setTimeout(() => {
                 this.closeBook();
@@ -20,6 +24,7 @@ export default () => {
                 this.openNext();
             }, 1000);
         });
+
     },    
 
     async loadPosts(num, indexStart) {
@@ -47,13 +52,16 @@ export default () => {
 
           this.numOfPosts = data.length -1;
 
-            this.loader = false;
+            setTimeout(() => {
+                this.loader = false;
+            }, 500);
 
         });
     },
 
     openBook(){
         this.closeBook();
+        this.stopAudio();
         this.$el.classList.add('active');
     },
 
@@ -73,7 +81,7 @@ export default () => {
         if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
             document.querySelectorAll('[data-book]')[this.statusAvanzamento].classList.add("active");
         }else{
-            await this.loadPosts(2, this.currentIndex);
+            await this.loadPosts(6, this.currentIndex);
             setTimeout(() => {
                 if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
                     document.querySelectorAll('[data-book]')[this.statusAvanzamento].classList.add("active");
@@ -86,8 +94,9 @@ export default () => {
 
     loadMore: {
       ["@click"]() {
-        this.loadPosts(2, this.currentIndex);
+        this.loadPosts(6, this.currentIndex);
       },
     },
+
   };
 };

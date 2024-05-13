@@ -2,86 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'fonts.scss';
-@import 'colors.scss';
-@import '/node_modules/aos/dist/aos.css';
+@import "fonts.scss";
+@import "colors.scss";
+@import "/node_modules/aos/dist/aos.css";
 
-@layer components{
-    body{
+@layer components {
+    body {
         @apply text-[20px] bg-c-blue text-white;
     }
-    .prawns{
-        &-container{
+    .prawns {
+        &-container {
             @apply lg:px-4 px-2.5 max-w-7xl mx-auto;
         }
-        &-header-hero-homepage{
+        &-header-hero-homepage {
             height: calc(100vh - 60px);
         }
-        &-sfumatura-bassa{
+        &-sfumatura-bassa {
             @apply bg-gradient-to-t from-c-blue;
         }
-        &-sfumatura-alta{
+        &-sfumatura-alta {
             @apply bg-gradient-to-b from-c-blue;
         }
-        &-cta-right{
+        &-cta-right {
             @apply bg-c-blue border border-white text-[16px] leading-none rounded-full rounded-tr-none uppercase pt-[6px] pb-[9px] px-[25px] hover:text-c-blue hover:bg-white inline-block;
         }
-        &-cta-left{
+        &-cta-left {
             @apply bg-c-blue border border-white text-[16px] leading-none rounded-full rounded-tl-none uppercase pt-[6px] pb-[9px] px-[25px] hover:text-c-blue hover:bg-white inline-block;
+        }
+        &-animate-image {
+            animation: animate-home ease-in-out 7s forwards;
+        }
+        &-animate-text {
+            animation: animate-text ease-in-out 7s forwards;
+        }
+        @keyframes animate-home{
+            0% {
+                opacity: 0;
+                transform: scale(1)
+            }
+            25%{
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.1)
+            }
+        }
+        @keyframes animate-text{
+            0% {
+                opacity: 0;
+            }
+            25%{
+                opacity: 1;
+            }
         }
     }
 
-    header{
-        nav{
-            .prawns-active-menu{
-                &::after{
+    header {
+        nav {
+            .prawns-active-menu {
+                &::after {
                     content: "";
-                    width: 105%!important;
+                    width: 105% !important;
                 }
             }
-            li:not(.not-this){
+            li:not(.not-this) {
                 @apply relative;
-                &::after{
+                &::after {
                     content: "";
                     @apply absolute -left-0.5 bottom-0 h-[2px] bg-c-orange inline-block w-0 rounded-full transition-all duration-300;
-                    &:hover{
-                        @apply  w-[105%]
+                    &:hover {
+                        @apply w-[105%];
                     }
                 }
             }
         }
     }
 
-    #audiolibro{
-        .active{
-
-            [data-title]{
+    #audiolibro {
+        .active {
+            [data-title] {
                 transform: translateX(325px);
                 @apply absolute text-c-orange;
             }
 
-            [data-description]{
+            [data-description] {
                 transform: translateY(45px);
                 @apply place-content-start h-max;
-                span{
+                span {
                     @apply line-clamp-none;
-
                 }
             }
 
-            [data-image]{
+            [data-image] {
                 @apply w-[325px] min-w-[325px] block h-full z-10;
             }
 
-            [data-play]{
+            [data-play] {
                 @apply flex;
             }
 
-            [data-audio]{
+            [data-audio] {
                 @apply flex;
             }
-
         }
     }
-
 }

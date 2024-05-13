@@ -10,9 +10,11 @@ import Footer from "../components/Footer.astro";
     <a href="/audiolibro" class="fixed bottom-10 right-10 prawns-cta-right z-10">Ascolta ora</a>
 
     <section class="relative">
-        <img src="/images/homepage-hero.jpg" alt="Homepage hero - the prawns manor" class="w-full prawns-header-hero-homepage object-cover">
+        <div class="prawns-header-hero-homepage overflow-hidden">
+            <img src="/images/homepage-hero.jpg" alt="Homepage hero - the prawns manor" class="block w-full object-cover prawns-animate-image">
+        </div>
         <div class="absolute bottom-0 w-full prawns-sfumatura-bassa h-2/3"></div>
-        <h1 class="absolute bottom-10 lg:left-10 left-2.5 font-breve text-[150px] leading-[122px]" >The <br>Prawn's Manor <br>Audiolibro</h1>
+        <h1 class="absolute bottom-10 lg:left-10 left-2.5 font-breve text-[150px] leading-[122px] prawns-animate-text" >The <br>Prawn's Manor <br>Audiolibro</h1>
         <div class="prawns-header-hero-homepage w-4 absolute left-0 top-0 bg-c-blue"></div>
         <div class="prawns-header-hero-homepage w-4 absolute right-0 top-0 bg-c-blue"></div>
     </section>
