@@ -2,8 +2,8 @@
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
-<header class="h-[60px] bg-c-blue flex items-center lg:px-4 px-2.5 sticky top-0 font-breve z-[999]">
-	<nav class="ml-auto text-[24px] flex space-x-4 items-center">
+<header class="lg:h-[60px] h-[50px] bg-c-blue flex items-center lg:px-4 px-2.5 sticky top-0 font-breve z-[999]">
+	<nav class="ml-auto lg:text-[24px] text-[18px] flex space-x-4 items-center">
 
 		<ul class="space-x-4 flex">
 			<li class={currentPath === "" ? "prawns-active-menu" : ""}><a href="/">home</a></li>
@@ -27,5 +27,5 @@ const currentPath = pathname.slice(1); // remove the first "/"
 	</nav>
 
 
-	<a href="/"><img class="max-w-[100px] absolute left-6 -bottom-[50px]" src="/images/logo.png" alt="logo the prawns manor" ></a>
+	<a href="/"><img class="lg:max-w-[100px] max-w-[40px] absolute lg:left-6 left-2.5 lg:-bottom-[50px] bottom-[5px]" src="/images/logo.png" alt="logo the prawns manor" ></a>
 </header>

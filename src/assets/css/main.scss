@@ -4,18 +4,20 @@
 
 @import "fonts.scss";
 @import "colors.scss";
-@import "/node_modules/aos/dist/aos.css";
 
 @layer components {
     body {
-        @apply text-[20px] bg-c-blue text-white;
+        @apply lg:text-[20px] text-[16px] bg-c-blue text-white;
     }
     .prawns {
         &-container {
             @apply lg:px-4 px-2.5 max-w-7xl mx-auto;
         }
         &-header-hero-homepage {
-            height: calc(100vh - 60px);
+           @media (max-width:1024px){
+            height: 50dvh;
+           }
+           height: calc(100vh - 60px);
         }
         &-sfumatura-bassa {
             @apply bg-gradient-to-t from-c-blue;
@@ -35,23 +37,23 @@
         &-animate-text {
             animation: animate-text ease-in-out 7s forwards;
         }
-        @keyframes animate-home{
+        @keyframes animate-home {
             0% {
                 opacity: 0;
-                transform: scale(1)
+                transform: scale(1);
             }
-            25%{
+            25% {
                 opacity: 1;
             }
             100% {
-                transform: scale(1.1)
+                transform: scale(1.1);
             }
         }
-        @keyframes animate-text{
+        @keyframes animate-text {
             0% {
                 opacity: 0;
             }
-            25%{
+            25% {
                 opacity: 1;
             }
         }
@@ -80,30 +82,78 @@
 
     #audiolibro {
         .active {
-            [data-title] {
-                transform: translateX(325px);
-                @apply absolute text-c-orange;
-            }
-
-            [data-description] {
-                transform: translateY(45px);
-                @apply place-content-start h-max;
-                span {
-                    @apply line-clamp-none;
+            @media (min-width:1024px){
+                [data-title] {
+                    transform: translateX(345px);
+                    @apply absolute text-c-orange;
+                }
+    
+                [data-description] {
+                    @apply place-content-start h-max;
+                    span {
+                        @apply line-clamp-none;
+                    }
+                }
+    
+                [data-subtitle] {
+                    @apply block;
+                }
+    
+                [data-image] {
+                    @apply w-[325px] min-w-[325px] h-[325px] object-cover;
+                }
+    
+                [data-play] {
+                    @apply flex;
+                }
+    
+                [data-audio] {
+                    @apply flex;
                 }
             }
 
+            [data-title] {
+
+            }
+
+            [data-description] {
+                animation: enterAnimateOpacity 500ms linear forwards;
+
+            }
+
+            [data-subtitle] {
+                animation: enterAnimateOpacity 500ms linear forwards;
+
+            }
+
             [data-image] {
-                @apply w-[325px] min-w-[325px] block h-full z-10;
+                animation: enterAnimateOpacity 500ms linear forwards;
             }
 
             [data-play] {
-                @apply flex;
+                animation: enterAnimateOpacity 500ms linear forwards;
             }
 
             [data-audio] {
-                @apply flex;
+                animation: enterAnimateOpacity 500ms linear forwards;
+            }
+
+        }
+
+        @keyframes enterAnimateOpacity {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
             }
         }
     }
+}
+
+[x-cloak]{
+    display: none!important;
 }

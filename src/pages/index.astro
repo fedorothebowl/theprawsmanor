@@ -4,56 +4,74 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
+<Layout metaTitle="The Prawn's Manor" metaDescription="">
     <Header />
 
-    <a href="/audiolibro" class="fixed bottom-10 right-10 prawns-cta-right z-10">Ascolta ora</a>
+    <a href="/audiolibro" class="lg:block hidden fixed bottom-10 right-10 prawns-cta-right z-10">Ascolta adesso</a>
 
     <section class="relative">
         <div class="prawns-header-hero-homepage overflow-hidden">
-            <img src="/images/homepage-hero.jpg" alt="Homepage hero - the prawns manor" class="block w-full object-cover prawns-animate-image">
+            <img src="/images/homepage-hero.jpg" alt="Homepage hero - the prawns manor" class="block w-full object-cover prawns-animate-image h-full">
         </div>
-        <div class="absolute bottom-0 w-full prawns-sfumatura-bassa h-2/3"></div>
-        <h1 class="absolute bottom-10 lg:left-10 left-2.5 font-breve text-[150px] leading-[122px] prawns-animate-text" >The <br>Prawn's Manor <br>Audiolibro</h1>
+        <div class="absolute lg:bottom-0 -bottom-[3px] w-full prawns-sfumatura-bassa h-2/3"></div>
+        <h1 class="absolute lg:bottom-10 bottom-6 lg:left-10 left-6 font-breve lg:text-[150px] text-[72px] leading-[60px] lg:leading-[122px] prawns-animate-text" >The <br>Prawn's Manor <br>Audiolibro</h1>
         <div class="prawns-header-hero-homepage w-4 absolute left-0 top-0 bg-c-blue"></div>
         <div class="prawns-header-hero-homepage w-4 absolute right-0 top-0 bg-c-blue"></div>
     </section>
 
-    <section class="prawns-container grid grid-cols-2 gap-4 mt-4">
+    <section class="prawns-container grid lg:grid-cols-2 grid-cols-1 gap-4 mt-4">
         <div class="h-full">
-            <div class="sticky top-[25%]">
-                <h2 class="text-[24px] leading-none text-c-orange mt-[50%]"><strong>The Prawn's Manor</strong></h2>
+            <div class="sticky lg:top-[25%]">
+                <h2 class="text-[24px] leading-none text-c-orange lg:mt-[50%]"><strong>The Prawn's Manor</strong></h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.</p>
                 <a href="/chi-siamo" class="prawns-cta-left mt-4">chi siamo</a>
             </div>
         </div>
-        <div class="relative">
+        <div class="relative lg:py-0 py-12">
             <img src="/images/cover-tiamat-homepage.jpg" alt="cover-tiamat-homepage" class="w-full">
         </div>
     </section>
 
     
-    <section class="lg:pt-[180px]" data-aos="fade-right">
+    <section class="lg:pt-[180px]">
         <div class="prawns-container">
-            <h4 class="lg:text-[32px]">Audiolibro</h4>
-            <h3 class="text-c-orange uppercase text-[130px] leading-none max-w-[1000px]"><strong class="extra">la leggenda dei 4</strong></h3>
-            <div>
-                <div class="lg:w-2/3 mb-12 line-clamp-4">Caro Avventuriero, se sei in procinto di leggere questa avventura, c'è una cosa che devi sapere riguardo al contenuto di quest'opera. La storia che si andrà a sviluppare nelle prossime pagine è stata scritta dopo aver giocato di ruolo in un mondo già esistente (subito riconoscibile) da cui abbiamo preso l'ambientazione e la storia di fondo, per poi aggiungerci i nostri personaggi e le nostre storie, trasformandola infine, come spesso accade nei GDR, in qualcosa di romanticamente personale. Tutto questo preambolo per dirvi che l'avventura che andrete a leggere avrà sì come sfondo una storia che magari già conoscete, ma che questo non deve spaventarvi nè deludervi, perchè il focus sarà sui personaggi e sulle loro vicende, entrambi presentati, come ogni buona campagna vuole, prima dell'inizio di tutto.</div>
+            <h4 class="lg:text-[32px] text-[20px]"><strong>Audiolibro</strong></h4>
+            <h3 class="text-c-orange uppercase lg:text-[130px] text-[72px] leading-none max-w-[1000px]"><strong class="extra">la leggenda dei 4</strong></h3>
+            <div class="mb-12">
+                <div class="lg:w-2/3line-clamp-4">Caro Avventuriero, se sei in procinto di leggere questa avventura, c'è una cosa che devi sapere riguardo al contenuto di quest'opera. La storia che si andrà a sviluppare nelle prossime pagine è stata scritta dopo aver giocato di ruolo in un mondo già esistente (subito riconoscibile) da cui abbiamo preso l'ambientazione e la storia di fondo, per poi aggiungerci i nostri personaggi e le nostre storie, trasformandola infine, come spesso accade nei GDR, in qualcosa di romanticamente personale. Tutto questo preambolo per dirvi che l'avventura che andrete a leggere avrà sì come sfondo una storia che magari già conoscete, ma che questo non deve spaventarvi nè deludervi, perchè il focus sarà sui personaggi e sulle loro vicende, entrambi presentati, come ogni buona campagna vuole, prima dell'inizio di tutto.</div>
+                <a href="/audiolibro#audiolibro" class="mt-2.5 text-[16px] text-c-orange flex space-x-2 items-center hover:translate-x-2 transition-transform duration-300">
+                    <strong>Ascolta adesso</strong>
+                    <svg class="w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M6 12H18M18 12L13 7M18 12L13 17" class="stroke-c-orange" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                </a>
             </div>
         </div>
-        <div class="grid grid-cols-4 gap-4 mb-12 prawns-container">
-            <img src="/images/personaggi/abibi.png" alt="" class="w-full">
-            <img src="/images/personaggi/chuck.png" alt="" class="w-full">
-            <img src="/images/personaggi/nog.png" alt="" class="w-full">
-            <img src="/images/personaggi/scroppo.png" alt="" class="w-full">
+        <div class="relative w-full lg:grid grid-cols-4 flex lg:gap-4 gap-6 snap-x snap-mandatory overflow-x-auto mb-12 prawns-container">
+            <div class="snap-center shrink-0">
+                <img src="/images/personaggi/abibi.png" alt="" class="lg:w-full w-80 aspect-square">
+            </div>
+            <div class="snap-center shrink-0">
+                <img src="/images/personaggi/chuck.png" alt="" class="lg:w-full w-80 aspect-square">
+            </div>
+            <div class="snap-center shrink-0">
+                <img src="/images/personaggi/nog.png" alt="" class="lg:w-full w-80 aspect-square">
+            </div>
+            <div class="snap-center shrink-0">
+                <img src="/images/personaggi/scroppo.png" alt="" class="lg:w-full w-80 aspect-square">
+            </div>
         </div>
 
-        <a href="/audiolibro" class="relative h-[60vh] w-full">
+        <a href="/audiolibro#audiolibro" class="relative lg:h-[60vh] h-[70dvh] w-full block">
             <img src="/images/audiolibro-homepage.jpg" alt="audiolibro cover immagine di un demone" class="w-full h-full object-cover">
-            <div class="absolute top-0 left-0 prawns-sfumatura-alta z-[1] w-full h-32"></div>
-            <div class="absolute bottom-0 left-0 prawns-sfumatura-bassa z-[1] w-full h-32"></div>
+            <div class="absolute top-0 left-0 prawns-sfumatura-alta z-[1] w-full lg:h-60 h-1/3"></div>
+            <div class="absolute bottom-0 left-0 prawns-sfumatura-bassa z-[1] w-full lg:h-60 h-1/3"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center w-full prawns-container text-center">
-                <span class="text-[150px] uppercase leading-[122px]"><strong class="extra">ascolta ora</strong></span>
+                <span class="lg:text-[150px] text-[72px] uppercase lg:leading-[122px] leading-none text-c-orange z-[1]"><strong class="extra">Inizia ora</strong></span>
             </div>
         </a>
 

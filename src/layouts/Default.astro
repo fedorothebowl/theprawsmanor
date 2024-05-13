@@ -1,17 +1,18 @@
 ---
 import '../assets/css/main.scss';
+const { metaTitle , metaDescription} = Astro.props;
 ---
 
 <!doctype html>
 
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 
 	<head>
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>Title</title>
-		<meta name="description" content="" />
+		<title>{metaTitle}</title>
+		<meta name="description" content={metaDescription} />
 
 
 		<!-- Favicon -->

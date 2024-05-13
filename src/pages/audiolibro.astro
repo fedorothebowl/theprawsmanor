@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import Hero from "../components/pages/hero.astro";
 ---
 
-<Layout>
+<Layout metaTitle="Audiolibro | The Prawn's Manor" metaDescription="">
     <Header />
     <Hero img="/images/three-god.jpg" subtitle="Audiliobro" title="La leggenda dei 4" alt="Illustrazione dell'audiolibro"/>
     
@@ -19,54 +19,61 @@ import Hero from "../components/pages/hero.astro";
 
         <strong class="uppercase text-[16px] block pb-2">Avanzamento <span x-text="statusAvanzamento"></span>/<span x-text="numOfPosts+1"></span></strong>
         <div class="relative">
-            <div class="divide-y divide-white  border-b border-white">
+            <div class="divide-y divide-white border-b border-white">
 
                 <template x-for="(book, index) in books">
-                    <div class="flex align-items-baseline cursor-pointer opacity-50 hover:opacity-100" data-book 
-                        x-init="currentIndex = index + 1;" 
-                        @click="openBook();" 
-                        :class="statusAvanzamento+1 > index && '!opacity-100' ">
-                        
-                        <div class="p-2.5 hidden w-0 h-0" data-image>
-                            <img :src="book.imageUrl" alt="" class="w-full">
-                        </div>
+                    <div>
+                        <div class="flex align-items-baseline cursor-pointer opacity-50 hover:opacity-100" data-book 
+                            x-init="currentIndex = index + 1;" 
+                            @click="openBook();" 
+                            :class="statusAvanzamento+1 > index && '!opacity-100'"
+                           >
+                           <div :id="'capitolo-' + index" class="pointer-events-none -mt-[61px] pt-[61px]"></div>
 
-                        <h3 class="w-[325px] uppercase text-[32px] transition-all duration-300 whitespace-nowrap pr-4" data-title><strong class="extra" x-text="book.title"></strong></h3>
-                        
-                        <div class="flex flex-col">
-                            <div class="w-auto">
-                                <h4 class="transition-all duration-300" data-description>
-                                    <span class="line-clamp-1 translate-y-[9px]" x-text="book.description"></span>
-                                </h4>
+                            <div class="p-2.5 z-10">
+                                <img :src="book.imageUrl" alt="" class="w-0 min-w-0 h-0 " data-image>
                             </div>
-        
-                            <div class="w-full h-max hidden mt-auto pb-2.5" data-audio  x-data="Audio(currentIndex-1);">
-                                <div>
-
-                                    <div class="flex items-start" :class="!showAudio && 'opacity-0 pointer-events-none' ">
-                                        <audio controls controlsList="nodownload" class="mr-auto mt-auto" x-ref="audioplayer">
-                                            <source :src="book.audioUrl" type="audio/mpeg">
-                                        </audio>
-                                    </div>
-            
-                                    <button class="items-center space-x-4 hidden text-c-orange" x-bind="button" x-show="!showAudio" data-play>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
-                                            <g id="Raggruppa_23" data-name="Raggruppa 23" transform="translate(-526 -957)">
-                                                <g id="Ellisse_1" data-name="Ellisse 1" transform="translate(526 957)" fill="none" stroke="#e17227" stroke-width="2">
-                                                <circle cx="15.5" cy="15.5" r="15.5" stroke="none"/>
-                                                <circle cx="15.5" cy="15.5" r="14.5" fill="none"/>
-                                                </g>
-                                                <path id="Tracciato_15" data-name="Tracciato 15" d="M7.407.716a1.438,1.438,0,0,1,2.488,0L17.1,13.134a1.438,1.438,0,0,1-1.244,2.161H1.44A1.438,1.438,0,0,1,.2,13.134Z" transform="translate(551.025 963.849) rotate(90)" fill="#e17227"/>
-                                            </g>
-                                            </svg>
-                                        <strong class="uppercase extra text-[16px]">Ascolta ora</strong>
-                                    </button>
+    
+                            <h3 class="w-[325px] uppercase text-[32px] transition-all duration-300 whitespace-nowrap pr-4" data-title>
+                                <strong class="extra">Capitolo <span x-text="index"></span></strong>
+                            </h3>
+                            
+                            <div class="flex flex-col">
+                                <div class="w-auto">
+                                    <h4 class="hidden" data-subtitle><strong x-text="book.title" class="mt-12 block"></strong></h4>
+                                    <h5 class="transition-all duration-300" data-description>
+                                        <span class="line-clamp-1 translate-y-[9px]" x-text="book.description"></span>
+                                    </h5>
                                 </div>
-
+            
+                                <div class="w-full h-max hidden mt-auto pb-2.5" data-audio  x-data="Audio(currentIndex-1);">
+                                    <div>
+    
+                                        <div class="flex items-start" :class="!showAudio && 'opacity-0 pointer-events-none' ">
+                                            <audio controls controlsList="nodownload" class="mr-auto mt-auto" x-ref="audioplayer">
+                                                <source :src="book.audioUrl" type="audio/mpeg">
+                                            </audio>
+                                        </div>
+                
+                                        <button class="items-center space-x-4 hidden text-c-orange" x-bind="button" x-show="!showAudio" data-play x-cloak>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+                                                <g id="Raggruppa_23" data-name="Raggruppa 23" transform="translate(-526 -957)">
+                                                    <g id="Ellisse_1" data-name="Ellisse 1" transform="translate(526 957)" fill="none" stroke="#e17227" stroke-width="2">
+                                                    <circle cx="15.5" cy="15.5" r="15.5" stroke="none"/>
+                                                    <circle cx="15.5" cy="15.5" r="14.5" fill="none"/>
+                                                    </g>
+                                                    <path id="Tracciato_15" data-name="Tracciato 15" d="M7.407.716a1.438,1.438,0,0,1,2.488,0L17.1,13.134a1.438,1.438,0,0,1-1.244,2.161H1.44A1.438,1.438,0,0,1,.2,13.134Z" transform="translate(551.025 963.849) rotate(90)" fill="#e17227"/>
+                                                </g>
+                                                </svg>
+                                            <strong class="uppercase extra text-[16px]">Ascolta ora</strong>
+                                        </button>
+                                    </div>
+    
+                                </div>
+    
                             </div>
-
+    
                         </div>
-
                     </div>
                 </template>
 
@@ -83,14 +90,8 @@ import Hero from "../components/pages/hero.astro";
                 
             </div>
         </div>
-        
 
-
-        <div x-show="showMessage" x-transition>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aliquam tempore ea repellendus sequi rerum beatae, excepturi asperiores saepe reiciendis quo repudiandae ipsum aliquid impedit praesentium maiores quibusdam, doloremque sapiente.
-        </div>
-
-        <div class="grid place-items-center" x-show="!hideBtn">
+        <div class="grid place-items-center" x-show="!hideBtn" x-cloak>
             <button class="text-[16px] py-4" x-bind="loadMore">
                 Carica altri capitoli
             </button>

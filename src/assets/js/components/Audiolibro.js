@@ -8,21 +8,20 @@ export default () => {
     currentIndex: 0,
     hideBtn: false,
     statusAvanzamento:0,
-    showMessage : false,
 
     async init() {
         
         await this.openNext();
-
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         document.addEventListener('endAudio', (e) => {
             // console.log('L\'audio è finito n.' + e.detail.index);
             this.statusAvanzamento = e.detail.index + 1;
             setTimeout(() => {
                 this.closeBook();
-            }, 500);
+            }, 250);
             setTimeout(() => {
                 this.openNext();
-            }, 1000);
+            }, 800);
         });
 
     },    
@@ -57,17 +56,21 @@ export default () => {
             }, 500);
 
         });
+
     },
 
     openBook(){
         this.closeBook();
         this.stopAudio();
         this.$el.classList.add('active');
+        this.$el.classList.add('opacity-100');
     },
 
     closeBook(){
         document.querySelectorAll('[data-book]').forEach(el=>{
             el.classList.remove('active');
+            el.classList.remove('opacity-100');
+
         });
     },
 
@@ -80,16 +83,18 @@ export default () => {
     async openNext(){
         if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
             document.querySelectorAll('[data-book]')[this.statusAvanzamento].classList.add("active");
+            this.scrollPosition();
         }else{
             await this.loadPosts(6, this.currentIndex);
-            setTimeout(() => {
-                if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
-                    document.querySelectorAll('[data-book]')[this.statusAvanzamento].classList.add("active");
-                }else{
-                    this.showMessage = true;
-                }
-            }, 300);
+            if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
+                document.querySelectorAll('[data-book]')[this.statusAvanzamento].classList.add("active");
+                this.scrollPosition();
+            }
         }
+    },
+
+    scrollPosition(){
+        document.getElementById(`capitolo-${this.statusAvanzamento}`).scrollIntoView({ behavior: 'smooth', block: 'start'  });
     },
 
     loadMore: {
