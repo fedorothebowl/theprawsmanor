@@ -14,12 +14,9 @@ export default () => {
         await this.openNext();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.addEventListener('endAudio', (e) => {
-            // console.log('L\'audio è finito n.' + e.detail.index);
             this.statusAvanzamento = e.detail.index + 1;
             setTimeout(() => {
                 this.closeBook();
-            }, 250);
-            setTimeout(() => {
                 this.openNext();
             }, 800);
         });
@@ -27,37 +24,36 @@ export default () => {
     },    
 
     async loadPosts(num, indexStart) {
-
-      this.loader = true;
-
-      fetch(this.url)
-
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Errore nella richiesta!");
-          }
-          return response.json();
-        })
-
-        .then((data) => {
-
-          for (let index = indexStart; index < indexStart + num; index++) {
-            if(data[index]){
-                this.books.push(data[index]);
-            } else{
-                this.hideBtn = true;
+        try {
+            this.loader = true;
+            
+            const response = await fetch(this.url);
+            if (!response.ok) {
+                throw new Error("Errore nella richiesta!");
             }
-          }
-
-          this.numOfPosts = data.length -1;
-
+            
+            const data = await response.json();
+            
+            for (let index = indexStart; index < indexStart + num; index++) {
+                if (data[index]) {
+                    this.books.push(data[index]);
+                } else {
+                    this.hideBtn = true;
+                }
+            }
+            
+            this.numOfPosts = data.length - 1;
+            
+            // Aggiorna il loader dopo un certo tempo
             setTimeout(() => {
                 this.loader = false;
             }, 500);
-
-        });
-
+        } catch (error) {
+            console.error(error);
+            // Gestisci eventuali errori qui
+        }
     },
+    
 
     openBook(){
         this.closeBook();
@@ -82,14 +78,19 @@ export default () => {
 
     async openNext(){
         if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
-            document.querySelectorAll('[data-book]')[this.statusAvanzamento].classList.add("active");
-            this.scrollPosition();
+            this.openNextBook();
         }else{
             await this.loadPosts(6, this.currentIndex);
-            if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
-                document.querySelectorAll('[data-book]')[this.statusAvanzamento].classList.add("active");
-                this.scrollPosition();
-            }
+            setTimeout(() => {
+                this.openNextBook();
+            }, 1000);
+        }
+    },
+
+    openNextBook(){
+        if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
+            document.querySelectorAll('[data-book]')[this.statusAvanzamento].classList.add("active");
+            this.scrollPosition();
         }
     },
 
