@@ -1,8 +1,9 @@
 // main.js
 import '../css/main.scss';
 import Alpine from 'alpinejs';
+import AOS from 'aos';
+
 window.Alpine = Alpine;
 Alpine.start();
 
-console.log("ciao!");
-console.log(Alpine);
+AOS.init();

@@ -1,2 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import 'fonts.scss';
 @import 'colors.scss';
+@import '/node_modules/aos/dist/aos.css';
+
+@layer components{
+    body{
+        @apply text-[20px] bg-c-blue text-white;
+    }
+    .prawns{
+        &-container{
+            @apply lg:px-4 px-2.5;
+        }
+        &-header-hero-homepage{
+            height: calc(100vh - 60px);
+        }
+        &-sfumatura-bassa{
+            @apply bg-gradient-to-t from-c-blue;
+        }
+        &-sfumatura-alta{
+            @apply bg-gradient-to-b from-c-blue;
+        }
+        &-cta-right{
+            @apply bg-c-blue border border-white text-[16px] leading-none rounded-full rounded-tr-none uppercase pt-[6px] pb-[9px] px-[25px] hover:text-c-blue hover:bg-white inline-block;
+        }
+        &-cta-left{
+            @apply bg-c-blue border border-white text-[16px] leading-none rounded-full rounded-tl-none uppercase pt-[6px] pb-[9px] px-[25px] hover:text-c-blue hover:bg-white inline-block;
+        }
+    }
+}

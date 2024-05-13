@@ -1,22 +1,18 @@
 ---
-import i18next, { t } from "i18next";
-import { HeadHrefLangs } from "astro-i18next/components";
-
 import '../assets/css/main.scss';
-// npx astro-i18next generate
 ---
 
 <!doctype html>
 
-<html lang={i18next.language}>
+<html lang="it">
 
 	<head>
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>{t("site.title")}</title>
-		<meta name="description" content={t("site.description")} />
-		<HeadHrefLangs />
+		<title>Title</title>
+		<meta name="description" content="" />
+
 
 		<!-- Favicon -->
 		<!-- <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/favicon/apple-touch-icon.png">
@@ -32,7 +28,9 @@ import '../assets/css/main.scss';
 	</head>
 
 	<body>
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<script src="/src/assets/js/main.js"></script>
 	</body>
 

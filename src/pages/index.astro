@@ -1,23 +1,62 @@
 ---
-import { Trans } from "astro-i18next/components";
-import { t, changeLanguage } from "i18next";
-import { localizePath } from "astro-i18next";
 import Layout from "../layouts/Default.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
-changeLanguage("it");
 ---
 
 <Layout>
     <Header />
-    <section class="h-[80vh] bg-red-200 grid place-items-center text-center">
-        <h1>{t("home.title")}</h1>
-        {t("home.subtitle")}
-        <div>
-            <Trans i18nKey="home.subtitle">12</Trans>
-        </div>
-        <a href={localizePath("/credits")}>credits</a>
+
+    <a href="" class="fixed bottom-10 right-10 prawns-cta-right z-10">Ascolta ora</a>
+
+    <section class="relative">
+        <img src="/images/homepage-hero.jpg" alt="Homepage hero - the prawns manor" class="w-full prawns-header-hero-homepage object-cover">
+        <div class="absolute bottom-0 w-full prawns-sfumatura-bassa h-2/3"></div>
+        <h1 class="absolute bottom-10 lg:left-10 left-2.5 font-breve text-[150px] leading-[122px]" >The <br>Prawn's Manor <br>Audiolibro</h1>
+        <div class="prawns-header-hero-homepage w-4 absolute left-0 top-0 bg-c-blue"></div>
+        <div class="prawns-header-hero-homepage w-4 absolute right-0 top-0 bg-c-blue"></div>
     </section>
+
+    <section class="prawns-container grid grid-cols-2 gap-4 mt-4">
+        <div class="h-full">
+            <div class="sticky top-[25%]">
+                <h2 class="text-[24px] leading-none text-c-orange mt-[50%]"><strong>The Prawn's Manor</strong></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.</p>
+                <a href="/chi-siamo" class="prawns-cta-left mt-4">chi siamo</a>
+            </div>
+        </div>
+        <div class="relative">
+            <img src="/images/cover-tiamat-homepage.jpg" alt="cover-tiamat-homepage" class="w-full">
+        </div>
+    </section>
+
+    
+    <section class="lg:pt-[180px]" data-aos="fade-right">
+        <div class="prawns-container">
+            <h4 class="lg:text-[32px]">Audiolibro</h4>
+            <h3 class="text-c-orange uppercase text-[130px] leading-none max-w-[1000px]"><strong class="extra">la leggenda dei 4</strong></h3>
+            <div>
+                <div class="lg:w-1/2 mb-12 line-clamp-4">Caro Avventuriero, se sei in procinto di leggere questa avventura, c'è una cosa che devi sapere riguardo al contenuto di quest'opera. La storia che si andrà a sviluppare nelle prossime pagine è stata scritta dopo aver giocato di ruolo in un mondo già esistente (subito riconoscibile) da cui abbiamo preso l'ambientazione e la storia di fondo, per poi aggiungerci i nostri personaggi e le nostre storie, trasformandola infine, come spesso accade nei GDR, in qualcosa di romanticamente personale. Tutto questo preambolo per dirvi che l'avventura che andrete a leggere avrà sì come sfondo una storia che magari già conoscete, ma che questo non deve spaventarvi nè deludervi, perchè il focus sarà sui personaggi e sulle loro vicende, entrambi presentati, come ogni buona campagna vuole, prima dell'inizio di tutto.</div>
+            </div>
+        </div>
+        <div class="grid grid-cols-4 gap-4 mb-12 prawns-container">
+            <img src="/images/personaggi/abibi.png" alt="" class="w-full">
+            <img src="/images/personaggi/chuck.png" alt="" class="w-full">
+            <img src="/images/personaggi/nog.png" alt="" class="w-full">
+            <img src="/images/personaggi/scroppo.png" alt="" class="w-full">
+        </div>
+
+        <a href="/audiolibro" class="relative h-[60vh] w-full">
+            <img src="/images/audiolibro-homepage.jpg" alt="audiolibro cover immagine di un demone" class="w-full h-full object-cover">
+            <div class="absolute top-0 left-0 prawns-sfumatura-alta z-[1] w-full h-32"></div>
+            <div class="absolute bottom-0 left-0 prawns-sfumatura-bassa z-[1] w-full h-32"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center w-full prawns-container text-center">
+                <span class="text-[150px] uppercase leading-[122px]"><strong class="extra">ascolta ora</strong></span>
+            </div>
+        </a>
+
+    </section>
+
+
     <Footer />
 </Layout>

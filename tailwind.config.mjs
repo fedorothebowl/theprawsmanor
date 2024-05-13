@@ -4,10 +4,8 @@ export default {
 	theme: {
 		extend: {
 			colors:{
-				'primary' : 'var(--primary)',
-				'secondary' : 'var(--secondary)',
-				'lightblue' : 'var(--lightblue)',
-				'skyblue' : 'var(--lightblue)'
+				'c-blue' : 'var(--blue)',
+				'c-orange' : 'var(--orange)',
 			}
 		},
 	},

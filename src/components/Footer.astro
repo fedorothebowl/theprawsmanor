@@ -8,6 +8,22 @@ interface Props {
 const { href, title, body } = Astro.props;
 --- -->
 
-<footer class="h-40 w-screen grid place-items-center text-center bg-red-300">
-	<div>Footer</div>
+<footer class="border-t border-white mt-4 prawns-container text-[14px] py-10 flex justify-between items-center z-[100] bg-c-blue relative">
+
+		<div class="flex space-x-4">
+			<span>Copyright 2024</span>
+			<span>-</span>
+			<ul class="flex space-x-4">
+				<li>
+					<a href="">Cookie Policy</a>
+				</li>
+				<li>
+					<a href="">Privacy Policy</a>
+				</li>
+			</ul>
+		</div>
+
+		<ul>
+			<li><a href="mailto:">info@ciao.it</a></li>
+		</ul>
 </footer>

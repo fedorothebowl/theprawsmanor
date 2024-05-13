@@ -1,0 +1,33 @@
+@font-face {
+    font-family: breve;
+    src: url('/public/fonts/BREVE2.ttf');
+  }
+  
+  .font-breve {
+    font-family: breve;
+  }
+
+  @font-face {
+    font-family: montserrat-bold;
+    src: url('/public/fonts/montserrat/Montserrat-Bold.ttf');
+  }
+  @font-face {
+    font-family: montserrat-Regular;
+    src: url('/public/fonts/montserrat/Montserrat-Regular.ttf');
+  }
+  @font-face {
+    font-family: montserrat-ExtraBold;
+    src: url('/public/fonts/montserrat/Montserrat-ExtraBold.ttf');
+  }
+  .font-montserrat{
+    strong {
+      font-family: montserrat-bold;
+      &.extra{
+        font-family: montserrat-ExtraBold;
+      }
+    }
+  }
+
+  body{
+    @extend .font-montserrat;
+  }
