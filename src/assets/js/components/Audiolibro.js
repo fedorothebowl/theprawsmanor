@@ -8,15 +8,21 @@ export default () => {
     currentIndex: 0,
     hideBtn: false,
     statusAvanzamento:0,
+    howManyBooks : 6,
+    isLocalExist : false,
 
     async init() {
-        
-        await this.openNext();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        this.initLocalStorage(this.getLocalStorage());
+        this.statusAvanzamento = this.getLocalStorage();
+        this.currentIndex = this.statusAvanzamento;
+        this.isLocalExist = this.getLocalStorage();
+        this.openNext();
+
         document.addEventListener('endAudio', (e) => {
             this.statusAvanzamento = e.detail.index + 1;
+            this.setLocalStorage(this.statusAvanzamento);
             setTimeout(() => {
-                this.closeBook();
                 this.openNext();
             }, 800);
         });
@@ -56,17 +62,16 @@ export default () => {
     
 
     openBook(){
-        this.closeBook();
+        this.closeAllBooks();
         this.stopAudio();
         this.$el.classList.add('active');
         this.$el.classList.add('opacity-100');
     },
 
-    closeBook(){
+    closeAllBooks(){
         document.querySelectorAll('[data-book]').forEach(el=>{
             el.classList.remove('active');
             el.classList.remove('opacity-100');
-
         });
     },
 
@@ -77,30 +82,45 @@ export default () => {
     },
 
     async openNext(){
-        if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
-            this.openNextBook();
+        if(this.currentIndex <= this.statusAvanzamento ){
+            await this.openNextCapter();
+            this.openNextBook(this.statusAvanzamento);
         }else{
-            await this.loadPosts(6, this.currentIndex);
-            setTimeout(() => {
-                this.openNextBook();
-            }, 1000);
+            this.openNextBook(this.statusAvanzamento);
         }
     },
 
-    openNextBook(){
-        if(document.querySelectorAll('[data-book]')[this.statusAvanzamento]){
-            document.querySelectorAll('[data-book]')[this.statusAvanzamento].classList.add("active");
-            this.scrollPosition();
-        }
+    async openNextCapter(){
+        let index = 0;
+        const loops = parseInt(this.currentIndex / this.howManyBooks);
+        while(loops >= index){
+            await this.loadPosts(this.howManyBooks, this.currentIndex);
+            index++;
+        }     
     },
 
-    scrollPosition(){
-        document.getElementById(`capitolo-${this.statusAvanzamento}`).scrollIntoView({ behavior: 'smooth', block: 'start'  });
+    openNextBook(index){
+        console.log(index)
+        this.closeAllBooks();
+        document.querySelectorAll('[data-book]')[index].classList.add("active");
+    },
+
+    initLocalStorage(status){
+        localStorage.setItem('avanzamentoAudiolibro', 0);
+        this.setLocalStorage(status);
+    },
+
+    setLocalStorage(status){
+        localStorage.setItem('avanzamentoAudiolibro', status);
+    },
+
+    getLocalStorage(){
+        return (localStorage.getItem('avanzamentoAudiolibro') ? parseInt(localStorage.getItem('avanzamentoAudiolibro')) : 0);
     },
 
     loadMore: {
       ["@click"]() {
-        this.loadPosts(6, this.currentIndex);
+        this.loadPosts(this.howManyBooks, this.currentIndex);
       },
     },
 

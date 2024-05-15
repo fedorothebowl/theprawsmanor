@@ -17,18 +17,17 @@ import Hero from "../components/pages/hero.astro";
 
     <section class="prawns-container mb-40" x-data="Audiolibro();" id="audiolibro">
 
-        <strong class="uppercase text-[16px] block pb-2">Avanzamento <span x-text="statusAvanzamento"></span>/<span x-text="numOfPosts+1"></span></strong>
+        <strong class="uppercase text-[16px] block pb-2">Avanzamento <span x-text="statusAvanzamento"></span>/<span x-text="numOfPosts"></span></strong>
         <div class="relative">
             <div class="divide-y divide-white border-b border-white">
 
                 <template x-for="(book, index) in books">
-                    <div class="flex align-items-baseline cursor-pointer opacity-50 hover:opacity-100" data-book
+                    <div class="flex align-items-baseline cursor-pointer hover:opacity-100 relative" data-book
                         x-init="currentIndex = index + 1;" 
+                        :class="index <= statusAvanzamento  ? '!opacity-100' : 'opacity-50' "
                         @click="openBook();" 
-                        :class="statusAvanzamento+1 > index && '!opacity-100'"
                         >
-                        <div :id="'capitolo-' + index" class="pointer-events-none -mt-[61px] pt-[61px]"></div>
-
+                        <!-- <div class="absolute top-2 right-0 bg-white text-c-blue border border-white px-3" x-show="index == statusAvanzamento && isLocalExist">Riprendiamo da dove ci siamo fermati</div> -->
                         <div class="p-2.5 z-10">
                             <img :src="book.imageUrl" alt="" class="w-0 min-w-0 h-0 " data-image>
                         </div>
