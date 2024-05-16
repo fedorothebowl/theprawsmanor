@@ -27,7 +27,7 @@ import Hero from "../components/pages/hero.astro";
                     <div class="border-b border-white flex lg:flex-row flex-col align-items-baseline cursor-pointer hover:opacity-100 bg-c-blue lg:py-0 relative z-10" data-book
                         x-init="currentIndex = index + 1;" 
                         :class="[index <= statusAvanzamento  ? '!opacity-100' : 'opacity-50', index==statusAvanzamento && 'text-c-orange' ]"
-                        @click="openBook();" 
+                        @click="openBook(index);" 
                         >
 
                         <!-- Immagine -->

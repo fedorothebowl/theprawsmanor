@@ -57,8 +57,9 @@ export default () => {
         }
     },
     
-
-    openBook(){
+    openBook(index){
+        this.setLocalStorage(index);
+        this.statusAvanzamento = index;
         this.closeAllBooks();
         this.$el.classList.add('active');
         this.$el.classList.add('opacity-100');
@@ -115,7 +116,7 @@ export default () => {
 
     loadMore: {
       ["@click"]() {
-        this.openNextCapter();
+        this.loadPosts(this.howManyBooks, this.currentIndex);
       },
     },
 
