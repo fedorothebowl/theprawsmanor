@@ -19,3 +19,4 @@
 # Carpetas y archivos de dependencias generados
 node_modules/
 vendor/
+dist/

@@ -1,92 +1,153 @@
 [
     {
         "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-0.mp3",
-        "title": "Capitolo 023232",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "audioUrl": "/audio/nog.mp3",
+        "title": "Nog",
+        "subtitle": "",
+        "description": "",
+        "others": {
+            "razza" : "Dragonide",
+            "eta": "sconosciuta",
+            "allineamento" : "legale buono",
+            "frase": "Chi sono io?"
+        }
+    },
+    {
+        "imageUrl": "/images/personaggi/abibi.png",
+        "audioUrl": "/audio/scroppo.mp3",
+        "title": "Scroppo",
+        "subtitle": "",
+        "description": "",
+        "others": {
+            "razza" : "Dragonide",
+            "eta": "sconosciuta",
+            "allineamento" : "legale buono",
+            "frase": "Chi sono io?"
+        }
+    },
+    {
+        "imageUrl": "/images/personaggi/abibi.png",
+        "audioUrl": "/audio/abibi.mp3",
+        "title": "Abibi",
+        "subtitle": "",
+        "description": "",
+        "others": {
+            "razza" : "Dragonide",
+            "eta": "sconosciuta",
+            "allineamento" : "legale buono",
+            "frase": "Chi sono io?"
+        }
+
+    },
+    {
+        "imageUrl": "/images/personaggi/abibi.png",
+        "audioUrl": "/audio/chuck.mp3",
+        "title": "Chuck",
+        "subtitle": "",
+        "description": "",
+        "others": {
+            "razza" : "Dragonide",
+            "eta": "sconosciuta",
+            "allineamento" : "legale buono",
+            "frase": "Chi sono io?"
+        }
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
         "audioUrl": "/audio/capitolo-1.mp3",
-        "title": "Capitolo edfwe1",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "title": "Capitolo 1",
+        "subtitle": "La Notte più Lunga",
+        "description": "“La Leggenda dei Quattro” è la classica ninna nanna che si racconta ai bambini prima di andare a letto. Ma si tratta davvero di sola fantasia?",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
         "audioUrl": "/audio/capitolo-2.mp3",
-        "title": "Capitgfdsolo 2",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "title": "Capitolo 2",
+        "subtitle": "Greenest in fiamme",
+        "description": "I Quattro inseguono il Culto del Drago fino a Greenest, una piccola cittadina nel sud della Costa della Spada, trovandola assaltata. Riusciranno a liberarla?",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
         "audioUrl": "/audio/capitolo-3.mp3",
-        "title": "Capitoadsfdgbfnhlo 3",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "title": "Capitolo 3",
+        "subtitle": "L’Accampamento",
+        "description": "I Quattro decidono di andare a salvare alcuni uomini di Greenest rapiti dal Culto e portati al loro accampamento. Tra questi vi è anche un certo Leosin, maestro di Nesim, che dice essere un Arpista importante.",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
         "audioUrl": "/audio/capitolo-4.mp3",
-        "title": "Capitohfgbfdvscdlo 4",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "title": "Capitolo 4",
+        "subtitle": "Il Nido",
+        "description": "Dopo il salvataggio degli uomini i Quattro tornano di nuovo all’Accampamento del Culto in cerca di informazioni.",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-0.mp3",
-        "title": "Capitoadsgfhdflo 0",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "audioUrl": "/audio/capitolo-5.mp3",
+        "title": "Capitolo 5",
+        "subtitle": "Diario di Scroppo: In Viaggio col Culto",
+        "description": "Seguiamo le vicende dei Quattro nel loro inseguimento al Culto direttamente dalle pagine del diario di uno di loro: Scroppo.",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-1.mp3",
-        "title": "Capitohgdfsdalo 1",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "audioUrl": "/audio/capitolo-6.mp3",
+        "title": "Capitolo 6",
+        "subtitle": "Lavori in corso",
+        "description": "Continua l’inseguimento dei Quattro ai danni del Culto e dello stregone rosso di Thay.",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-2.mp3",
-        "title": "Capit23456olo 2",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "audioUrl": "/audio/capitolo-7.mp3",
+        "title": "Capitolo 7",
+        "subtitle": "Il Castello di Naerytar",
+        "description": "I Quattro giungono finalmente a Naerytar, il luogo dove il Culto del Drago sta ammassando tesori. Che sia finalmente la fine dei giochi?",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-3.mp3",
-        "title": "Capito23456lo 3",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "audioUrl": "/audio/capitolo-8.mp3",
+        "title": "Capitolo 8",
+        "subtitle": "La Lettera di Talis",
+        "description": "Siamo finalmente arrivati al gran finale dell’opera di Volo. Sarà riuscito a risalire completamente alla storia dei Quattro? Oppure c’è ancora qualche punto nascosto?",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-4.mp3",
-        "title": "Capito23567lo 4",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "audioUrl": "/audio/capitolo-9.mp3",
+        "title": "Capitolo 9",
+        "subtitle": "Il Castello Skyreach",
+        "description": "Informazioni insperate permettono la continuazione del racconto dei Quattro. Ma… chi avrà mandato tali informazioni?",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-0.mp3",
-        "title": "Capito1324567ytgfrcdlo 0",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "audioUrl": "/audio/capitolo-10.mp3",
+        "title": "Capitolo 10",
+        "subtitle": "Il Vassalo di Bahamut",
+        "description": "La battaglia finale è cominciata! I primi a scontrarsi sono Nog e Langdedrosa.",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-1.mp3",
-        "title": "Capito123456lo 1",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "audioUrl": "/audio/capitolo-11.mp3",
+        "title": "Capitolo 11",
+        "subtitle": "Emissari Divini e Vermi",
+        "description": "Chuck, Scroppo e Abibi hanno raggiunto Rezmir sul tetto della torre più alta. L’ultima battaglia sta per avere fine.",
+        "others": {}
     },
     {
         "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-2.mp3",
-        "title": "Capitsdfgbfvcdsolo 2",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
-    },
-    {
-        "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-3.mp3",
-        "title": "Capidcvf gfvcdxso 3",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
-    },
-    {
-        "imageUrl": "/images/personaggi/abibi.png",
-        "audioUrl": "/audio/capitolo-4.mp3",
-        "title": "Capitovfdfo 4",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatem recusandae nam, sapiente a dolorem fugit totam earum atque voluptatibus libero facilis expedita ex consequatur eius maxime vitae aperiam dolores."
+        "audioUrl": "/audio/epilogo.mp3",
+        "title": "Epilogo",
+        "subtitle": "Una Chiacchierata per il futuro",
+        "description": "Diverse figure scure si parlano attorno a un falò durante una notte tranquilla. Chi sono… e cosa vogliono?",
+        "others": {}
     }
+
+
 ]

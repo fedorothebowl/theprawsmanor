@@ -14,40 +14,64 @@ import Hero from "../components/pages/hero.astro";
             La storia che si andrà a sviluppare nelle prossime pagine è stata scritta dopo aver giocato di ruolo in un mondo già esistente (subito riconoscibile) da cui abbiamo preso l'ambientazione e la storia di fondo, per poi aggiungerci i nostri personaggi e le nostre storie, trasformandola infine, come spesso accade nei GDR, in qualcosa di romanticamente personale. 
             Tutto questo preambolo per dirvi che l'avventura che andrete a leggere avrà sì come sfondo una storia che magari già conoscete, ma che questo non deve spaventarvi nè deludervi, perchè il focus sarà sui personaggi e sulle loro vicende, entrambi presentati, come ogni buona campagna vuole, prima dell'inizio di tutto.</p>
     </div>
+    
+
 
     <section class="prawns-container mb-40" x-data="Audiolibro();" id="audiolibro">
 
         <strong class="uppercase text-[16px] block pb-2">Avanzamento <span x-text="statusAvanzamento"></span>/<span x-text="numOfPosts"></span></strong>
         <div class="relative">
-            <div class="divide-y divide-white border-b border-white">
+            <div class="border-b border-white">
 
                 <template x-for="(book, index) in books">
-                    <div class="flex align-items-baseline cursor-pointer hover:opacity-100 relative" data-book
+                    <div class="border-b border-white flex lg:flex-row flex-col align-items-baseline cursor-pointer hover:opacity-100 bg-c-blue lg:py-0 relative z-10" data-book
                         x-init="currentIndex = index + 1;" 
                         :class="index <= statusAvanzamento  ? '!opacity-100' : 'opacity-50' "
                         @click="openBook();" 
                         >
-                        <!-- <div class="absolute top-2 right-0 bg-white text-c-blue border border-white px-3" x-show="index == statusAvanzamento && isLocalExist">Riprendiamo da dove ci siamo fermati</div> -->
-                        <div class="p-2.5 z-10">
-                            <img :src="book.imageUrl" alt="" class="w-0 min-w-0 h-0 " data-image>
+
+                        <!-- Immagine -->
+                        <div class="z-10 lg:order-1 order-2" data-image>
+                            <img :src="book.imageUrl" alt="" class="w-0 min-w-0 h-0">
                         </div>
 
-                        <h3 class="w-[325px] uppercase text-[32px] transition-all duration-300 whitespace-nowrap pr-4" data-title>
-                            <strong class="extra">Capitolo <span x-text="index"></span></strong>
+                        <!-- Titolo -->
+                        <h3 class="lg:order-2 order-1 lg:min-w-[250px] lg:w-[250px] w-full uppercase text-[32px] transition-all duration-300 whitespace-nowrap lg:pr-4 lg:pb-0 pb-1" data-title>
+                            <strong class="extra" x-text="book.title"></strong>
                         </h3>
                         
-                        <div class="flex flex-col">
+                        <!-- Altro -->
+                        <div class="order-3 flex flex-col lg:px-4 px-0">
+
                             <div class="w-auto">
-                                <h4 class="hidden" data-subtitle><strong x-text="book.title" class="mt-12 block"></strong></h4>
-                                <h5 class="transition-all duration-300" data-description>
-                                    <span class="line-clamp-1 translate-y-[9px]" x-text="book.description"></span>
-                                </h5>
+                                <template x-if="book.subtitle">
+                                    <h4 class="hidden" data-subtitle><strong x-text="book.subtitle" class="lg:mt-12 block"></strong></h4>
+                                </template>
+                                <template x-if="book.description">
+                                    <h5 class="transition-all duration-300 lg:block hidden" data-description>
+                                        <span class="line-clamp-1 lg:translate-y-[9px] text-left" x-text="book.description"></span>
+                                    </h5>
+                                </template>
+                                <ul class="lg:mt-12 hidden" data-others>
+                                    <template x-if="book.others.razza">
+                                        <li>Razza: <span x-text="book.others.razza"></span></li>
+                                    </template>
+                                    <template x-if="book.others.eta">
+                                        <li>Età: <span x-text="book.others.eta"></span></li>
+                                    </template>
+                                    <template x-if="book.others.allineamento">
+                                        <li>Allineamento: <span x-text="book.others.allineamento"></span></li>
+                                    </template>
+                                    <template x-if="book.others.frase">
+                                        <li><i><span x-text="book.others.frase"></span></i></li>
+                                    </template>
+                                </ul>
                             </div>
         
-                            <div class="w-full h-max hidden mt-auto pb-2.5" data-audio  x-data="Audio(currentIndex-1);">
+                            <div class="w-full h-max hidden mt-auto lg:pb-2.5 lg:pt-0 py-4" data-audio x-data="Audio(currentIndex-1);">
                                 <div>
 
-                                    <div class="flex items-start" :class="!showAudio && 'opacity-0 pointer-events-none' ">
+                                    <div class="flex items-start" x-show="showAudio">
                                         <audio controls controlsList="nodownload" class="mr-auto mt-auto" x-ref="audioplayer">
                                             <source :src="book.audioUrl" type="audio/mpeg">
                                         </audio>

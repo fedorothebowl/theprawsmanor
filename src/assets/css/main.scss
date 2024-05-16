@@ -80,43 +80,51 @@
         }
     }
 
-    #audiolibro {
+    #audiolibro,
+    #audiolibro-personaggi {
         .active {
+
+            [data-image] {
+                img{
+                    @apply w-full h-[325px] object-cover order-2 pb-2.5;
+                }
+            }
+            [data-subtitle],[data-title],[data-others],[data-audio]{
+                @apply block;
+            }
+    
+            [data-play] {
+                @apply flex;
+            }
+            [data-description] {
+                @apply place-content-start h-max block;
+                span {
+                    @apply line-clamp-none;
+                }
+            }
             @media (min-width:1024px){
+
                 [data-title] {
-                    transform: translateX(345px);
+                    transform: translateX(335px);
                     @apply absolute text-c-orange;
                 }
     
-                [data-description] {
-                    @apply place-content-start h-max;
-                    span {
-                        @apply line-clamp-none;
-                    }
-                }
-    
-                [data-subtitle] {
+                [data-subtitle], [data-others] {
                     @apply block;
                 }
     
                 [data-image] {
-                    @apply w-[325px] min-w-[325px] h-[325px] object-cover;
+                    img{
+                        @apply w-[325px] min-w-[325px] h-[325px] object-cover pt-2.5;
+                    }
                 }
-    
-                [data-play] {
-                    @apply flex;
-                }
-    
+
                 [data-audio] {
                     @apply flex;
                 }
             }
 
-            [data-title] {
-
-            }
-
-            [data-description] {
+            [data-description], [data-others]{
                 animation: enterAnimateOpacity 500ms linear forwards;
 
             }

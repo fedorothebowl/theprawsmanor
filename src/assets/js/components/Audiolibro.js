@@ -14,10 +14,10 @@ export default () => {
     async init() {
 
         this.initLocalStorage(this.getLocalStorage());
-        this.statusAvanzamento = this.getLocalStorage();
         this.currentIndex = this.statusAvanzamento;
         this.isLocalExist = this.getLocalStorage();
         this.openNext();
+        this.statusAvanzamento = this.getLocalStorage();
 
         document.addEventListener('endAudio', (e) => {
             this.statusAvanzamento = e.detail.index + 1;
@@ -39,7 +39,7 @@ export default () => {
             }
             
             const data = await response.json();
-            
+            console.log(data)
             for (let index = indexStart; index < indexStart + num; index++) {
                 if (data[index]) {
                     this.books.push(data[index]);
@@ -47,8 +47,7 @@ export default () => {
                     this.hideBtn = true;
                 }
             }
-            
-            this.numOfPosts = data.length - 1;
+            this.numOfPosts = data.length;
             
             // Aggiorna il loader dopo un certo tempo
             setTimeout(() => {
@@ -63,7 +62,6 @@ export default () => {
 
     openBook(){
         this.closeAllBooks();
-        this.stopAudio();
         this.$el.classList.add('active');
         this.$el.classList.add('opacity-100');
     },
@@ -73,6 +71,7 @@ export default () => {
             el.classList.remove('active');
             el.classList.remove('opacity-100');
         });
+        this.stopAudio();
     },
 
     stopAudio(){
@@ -100,7 +99,6 @@ export default () => {
     },
 
     openNextBook(index){
-        console.log(index)
         this.closeAllBooks();
         document.querySelectorAll('[data-book]')[index].classList.add("active");
     },
