@@ -5,9 +5,9 @@ import Footer from "../components/Footer.astro";
 import Hero from "../components/pages/hero.astro";
 ---
 
-<Layout metaTitle="Audiolibro | The Prawn's Manor" metaDescription="">
+<Layout metaTitle="Audiolibro | The Prawn's Manor" metaDescription="Esplora l'audiolibro La Leggenda dei 4 su The Prawn's Manor. Un'avventura unica che combina vecchie storie con nuovi personaggi. Scopri di più e inizia a ascoltare oggi stesso!">
     <Header />
-    <Hero img="/images/three-god.jpg" subtitle="Audiliobro" title="La leggenda dei 4" alt="Illustrazione dell'audiolibro"/>
+    <Hero img="/images/three-god.jpg" subtitle="Audiolibro" title="La leggenda dei 4" alt="Illustrazione dell'audiolibro"/>
     
     <div class="prawns-container lg:mb-40">
         <p>Caro Avventuriero, se sei in procinto di leggere questa avventura, c'è una cosa che devi sapere riguardo al contenuto di quest'opera. 
@@ -19,7 +19,7 @@ import Hero from "../components/pages/hero.astro";
 
     <section class="prawns-container mb-40" x-data="Audiolibro();" id="audiolibro">
 
-        <strong class="uppercase text-[16px] block pb-2 text-c-orange">Avanzamento <span x-text="statusAvanzamento"></span>/<span x-text="numOfPosts"></span></strong>
+        <strong class="uppercase text-[16px] block pb-2 text-c-orange lg:mt-0 mt-8">Avanzamento <span x-text="statusAvanzamento"></span>/<span x-text="numOfPosts"></span></strong>
         <div class="relative">
             <div class="border-b border-t border-white">
 
@@ -72,7 +72,7 @@ import Hero from "../components/pages/hero.astro";
                                 <div>
 
                                     <div class="flex items-start" x-show="showAudio">
-                                        <audio controls controlsList="nodownload" class="mr-auto mt-auto" x-ref="audioplayer">
+                                        <audio controls class="mr-auto mt-auto" x-ref="audioplayer" controlsList="nodownload">
                                             <source :src="book.audioUrl" type="audio/mpeg">
                                         </audio>
                                     </div>

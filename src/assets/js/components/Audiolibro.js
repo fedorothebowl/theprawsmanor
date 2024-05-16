@@ -65,21 +65,17 @@ export default () => {
     },
 
     closeAllBooks(){
+        // document.querySelectorAll("audio").forEach(audio=>{
+        //     audio.pause();
+        // })
         document.querySelectorAll('[data-book]').forEach(el=>{
             el.classList.remove('active');
             el.classList.remove('opacity-100');
         });
-        this.stopAudio();
     },
 
-    stopAudio(){
-        document.querySelectorAll("audio").forEach(el=>{
-            el.pause();
-        })
-    },
 
     async openNext(){
-        console.log(this.currentIndex, this.statusAvanzamento)
         if(this.currentIndex <= this.statusAvanzamento ){
             await this.openNextCapter();
             this.openNextBook(this.statusAvanzamento);
@@ -90,7 +86,6 @@ export default () => {
 
     async openNextCapter(){
         let index = 0;
-        console.log(document.querySelectorAll("[data-book]"))
         const loops = parseInt(this.getLocalStorage() / this.howManyBooks);
 
         while(loops > index){

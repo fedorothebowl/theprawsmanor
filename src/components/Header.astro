@@ -3,7 +3,7 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
 <header class="lg:h-[60px] h-[50px] bg-c-blue flex items-center lg:px-4 px-2.5 sticky top-0 font-breve z-[999]">
-	<nav class="ml-auto lg:text-[24px] text-[18px] flex space-x-4 items-center">
+	<nav class="ml-auto lg:text-[24px] text-[20px] flex space-x-4 items-center">
 
 		<ul class="space-x-4 flex">
 			<li class={currentPath === "" ? "prawns-active-menu" : ""}><a href="/">home</a></li>

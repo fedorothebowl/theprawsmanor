@@ -1,6 +1,6 @@
 [
     {
-        "imageUrl": "/images/personaggi/nog.png",
+        "imageUrl": "/images/personaggi/nog.jpg",
         "audioUrl": "/audio/nog.mp3",
         "title": "Nog",
         "subtitle": "",
@@ -13,7 +13,7 @@
         }
     },
     {
-        "imageUrl": "/images/personaggi/scroppo.png",
+        "imageUrl": "/images/personaggi/scroppo.jpg",
         "audioUrl": "/audio/scroppo.mp3",
         "title": "Scroppo",
         "subtitle": "",
@@ -26,7 +26,7 @@
         }
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/personaggi/abibi.jpg",
         "audioUrl": "/audio/abibi.mp3",
         "title": "Abibi",
         "subtitle": "",
@@ -40,7 +40,7 @@
 
     },
     {
-        "imageUrl": "/images/personaggi/chuck.png",
+        "imageUrl": "/images/personaggi/chuck.jpg",
         "audioUrl": "/audio/chuck.mp3",
         "title": "Chuck",
         "subtitle": "",
