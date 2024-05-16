@@ -92,12 +92,16 @@
             [data-subtitle],[data-title],[data-others],[data-audio]{
                 @apply block;
             }
+
+            [data-others],{
+                @apply text-white;
+            }
     
             [data-play] {
                 @apply flex;
             }
             [data-description] {
-                @apply place-content-start h-max block;
+                @apply place-content-start h-max block text-white;
                 span {
                     @apply line-clamp-none;
                 }
@@ -105,7 +109,7 @@
             @media (min-width:1024px){
 
                 [data-title] {
-                    transform: translateX(335px);
+                    transform: translateX(340px);
                     @apply absolute text-c-orange;
                 }
     

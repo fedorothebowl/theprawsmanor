@@ -19,14 +19,14 @@ import Hero from "../components/pages/hero.astro";
 
     <section class="prawns-container mb-40" x-data="Audiolibro();" id="audiolibro">
 
-        <strong class="uppercase text-[16px] block pb-2">Avanzamento <span x-text="statusAvanzamento"></span>/<span x-text="numOfPosts"></span></strong>
+        <strong class="uppercase text-[16px] block pb-2 text-c-orange">Avanzamento <span x-text="statusAvanzamento"></span>/<span x-text="numOfPosts"></span></strong>
         <div class="relative">
-            <div class="border-b border-white">
+            <div class="border-b border-t border-white">
 
                 <template x-for="(book, index) in books">
                     <div class="border-b border-white flex lg:flex-row flex-col align-items-baseline cursor-pointer hover:opacity-100 bg-c-blue lg:py-0 relative z-10" data-book
                         x-init="currentIndex = index + 1;" 
-                        :class="index <= statusAvanzamento  ? '!opacity-100' : 'opacity-50' "
+                        :class="[index <= statusAvanzamento  ? '!opacity-100' : 'opacity-50', index==statusAvanzamento && 'text-c-orange' ]"
                         @click="openBook();" 
                         >
 

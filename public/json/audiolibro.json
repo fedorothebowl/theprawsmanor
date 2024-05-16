@@ -1,6 +1,6 @@
 [
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/personaggi/nog.png",
         "audioUrl": "/audio/nog.mp3",
         "title": "Nog",
         "subtitle": "",
@@ -13,16 +13,16 @@
         }
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/personaggi/scroppo.png",
         "audioUrl": "/audio/scroppo.mp3",
         "title": "Scroppo",
         "subtitle": "",
         "description": "",
         "others": {
-            "razza" : "Dragonide",
+            "razza" : "Gnomo",
             "eta": "sconosciuta",
-            "allineamento" : "legale buono",
-            "frase": "Chi sono io?"
+            "allineamento" : "caotico legale",
+            "frase": "Per nemici intendo chiunque mi faccia un torto…"
         }
     },
     {
@@ -32,28 +32,28 @@
         "subtitle": "",
         "description": "",
         "others": {
-            "razza" : "Dragonide",
-            "eta": "sconosciuta",
-            "allineamento" : "legale buono",
-            "frase": "Chi sono io?"
+            "razza" : "Umano",
+            "eta": "31",
+            "allineamento" : "caotico buono",
+            "frase": "Noi Abibi stiamo cacciando grosso drago… veniamo da lontano, dal deserto"
         }
 
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/personaggi/chuck.png",
         "audioUrl": "/audio/chuck.mp3",
         "title": "Chuck",
         "subtitle": "",
         "description": "",
         "others": {
-            "razza" : "Dragonide",
-            "eta": "sconosciuta",
-            "allineamento" : "legale buono",
-            "frase": "Chi sono io?"
+            "razza" : "Umano",
+            "eta": "34",
+            "allineamento" : "legale",
+            "frase": "Tronerò al villaggio solo dopo aver trovato la mia pace… ci vediamo"
         }
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/1.jpg",
         "audioUrl": "/audio/capitolo-1.mp3",
         "title": "Capitolo 1",
         "subtitle": "La Notte più Lunga",
@@ -61,7 +61,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/2.jpg",
         "audioUrl": "/audio/capitolo-2.mp3",
         "title": "Capitolo 2",
         "subtitle": "Greenest in fiamme",
@@ -69,7 +69,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/3.jpg",
         "audioUrl": "/audio/capitolo-3.mp3",
         "title": "Capitolo 3",
         "subtitle": "L’Accampamento",
@@ -77,7 +77,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/4.jpg",
         "audioUrl": "/audio/capitolo-4.mp3",
         "title": "Capitolo 4",
         "subtitle": "Il Nido",
@@ -85,7 +85,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/5.jpg",
         "audioUrl": "/audio/capitolo-5.mp3",
         "title": "Capitolo 5",
         "subtitle": "Diario di Scroppo: In Viaggio col Culto",
@@ -93,7 +93,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/6.jpg",
         "audioUrl": "/audio/capitolo-6.mp3",
         "title": "Capitolo 6",
         "subtitle": "Lavori in corso",
@@ -101,7 +101,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/7.jpg",
         "audioUrl": "/audio/capitolo-7.mp3",
         "title": "Capitolo 7",
         "subtitle": "Il Castello di Naerytar",
@@ -109,7 +109,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/8.jpg",
         "audioUrl": "/audio/capitolo-8.mp3",
         "title": "Capitolo 8",
         "subtitle": "La Lettera di Talis",
@@ -117,7 +117,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/9.jpg",
         "audioUrl": "/audio/capitolo-9.mp3",
         "title": "Capitolo 9",
         "subtitle": "Il Castello Skyreach",
@@ -125,7 +125,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/10.jpg",
         "audioUrl": "/audio/capitolo-10.mp3",
         "title": "Capitolo 10",
         "subtitle": "Il Vassalo di Bahamut",
@@ -133,7 +133,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/11.jpg",
         "audioUrl": "/audio/capitolo-11.mp3",
         "title": "Capitolo 11",
         "subtitle": "Emissari Divini e Vermi",
@@ -141,7 +141,7 @@
         "others": {}
     },
     {
-        "imageUrl": "/images/personaggi/abibi.png",
+        "imageUrl": "/images/capters/epilogo.jpg",
         "audioUrl": "/audio/epilogo.mp3",
         "title": "Epilogo",
         "subtitle": "Una Chiacchierata per il futuro",

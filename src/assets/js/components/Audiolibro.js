@@ -9,15 +9,14 @@ export default () => {
     hideBtn: false,
     statusAvanzamento:0,
     howManyBooks : 6,
-    isLocalExist : false,
 
     async init() {
 
         this.initLocalStorage(this.getLocalStorage());
-        this.currentIndex = this.statusAvanzamento;
-        this.isLocalExist = this.getLocalStorage();
-        this.openNext();
         this.statusAvanzamento = this.getLocalStorage();
+        this.currentIndex = this.statusAvanzamento;
+        await this.loadPosts(this.howManyBooks, 0);
+        this.openNext();
 
         document.addEventListener('endAudio', (e) => {
             this.statusAvanzamento = e.detail.index + 1;
@@ -39,7 +38,6 @@ export default () => {
             }
             
             const data = await response.json();
-            console.log(data)
             for (let index = indexStart; index < indexStart + num; index++) {
                 if (data[index]) {
                     this.books.push(data[index]);
@@ -81,6 +79,7 @@ export default () => {
     },
 
     async openNext(){
+        console.log(this.currentIndex, this.statusAvanzamento)
         if(this.currentIndex <= this.statusAvanzamento ){
             await this.openNextCapter();
             this.openNextBook(this.statusAvanzamento);
@@ -91,11 +90,14 @@ export default () => {
 
     async openNextCapter(){
         let index = 0;
-        const loops = parseInt(this.currentIndex / this.howManyBooks);
-        while(loops >= index){
+        console.log(document.querySelectorAll("[data-book]"))
+        const loops = parseInt(this.getLocalStorage() / this.howManyBooks);
+
+        while(loops > index){
             await this.loadPosts(this.howManyBooks, this.currentIndex);
             index++;
-        }     
+        }    
+
     },
 
     openNextBook(index){
@@ -118,7 +120,7 @@ export default () => {
 
     loadMore: {
       ["@click"]() {
-        this.loadPosts(this.howManyBooks, this.currentIndex);
+        this.openNextCapter();
       },
     },
 
