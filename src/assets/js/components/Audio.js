@@ -18,7 +18,7 @@ export default ((index)=>{
         button:{
             ['@click'](){
                 this.showAudio = true;
-                this.$refs.audioplayer.play();
+                // this.$refs.audioplayer.play();
             }
         }
     }
