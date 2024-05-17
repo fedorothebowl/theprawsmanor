@@ -1,19 +1,19 @@
-<footer class="border-t border-white lg:mt-4 mt-2.5 lg:px-4 px-2.5 text-[14px] py-4 flex justify-between items-center z-[100] bg-c-blue relative">
+<footer class="border-t border-white lg:mt-4 mt-2.5 lg:px-4 px-2.5 text-[14px] py-4 flex justify-between items-center z-[100] bg-c-blue relative" x-data="{ date : new Date().getFullYear() }">
 
 		<div class="flex space-x-4">
-			<span>Copyright 2024</span>
+			<span>Copyright <span x-text="date"></span></span>
 			<span>-</span>
 			<ul class="flex space-x-4">
 				<li>
-					<a href="">Cookie Policy</a>
+					<a href="" class="hover:opacity-75">Cookie Policy</a>
 				</li>
 				<li>
-					<a href="">Privacy Policy</a>
+					<a href="" class="hover:opacity-75">Privacy Policy</a>
 				</li>
 			</ul>
 		</div>
 
 		<ul>
-			<li><a href="mailto:">info@ciao.it</a></li>
+			<li><a href="mailto:theprawnsmanor@gmail.com" class="hover:opacity-75">theprawnsmanor@gmail.com</a></li>
 		</ul>
 </footer>

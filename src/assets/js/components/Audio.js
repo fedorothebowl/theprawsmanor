@@ -18,9 +18,7 @@ export default ((index)=>{
         button:{
             ['@click'](){
                 this.showAudio = true;
-                this.$refs.audioplayer.addEventListener('canplaythrough', function() {
-                    this.$refs.audioplayer.play();
-                }, false);              
+                this.$refs.audioplayer.play();            
             }
         }
     }
