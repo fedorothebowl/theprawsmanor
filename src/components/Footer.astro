@@ -1,19 +1,11 @@
-<footer class="border-t border-white lg:mt-4 mt-2.5 lg:px-4 px-2.5 text-[14px] py-4 flex justify-between items-center z-[100] bg-c-blue relative" x-data="{ date : new Date().getFullYear() }">
-
-		<div class="flex space-x-4">
+<footer class="border-t border-white lg:mt-4 mt-2.5 lg:px-4 px-2.5 text-[14px] py-4 flex lg:flex-row flex-col lg:justify-between lg:items-center z-[100] bg-c-blue relative" x-data="{ date : new Date().getFullYear() }">
+	<div class="lg:flex lg:space-x-4">
+		<div class="flex justify-between">
 			<span>Copyright <span x-text="date"></span></span>
-			<span>-</span>
-			<ul class="flex space-x-4">
-				<li>
-					<a href="" class="hover:opacity-75">Cookie Policy</a>
-				</li>
-				<li>
-					<a href="" class="hover:opacity-75">Privacy Policy</a>
-				</li>
-			</ul>
+			<a href="mailto:theprawnsmanor@gmail.com" class="hover:opacity-75 lg:hidden">theprawnsmanor@gmail.com</a>
 		</div>
-
-		<ul>
-			<li><a href="mailto:theprawnsmanor@gmail.com" class="hover:opacity-75">theprawnsmanor@gmail.com</a></li>
-		</ul>
+		<span class="lg:inline hidden">-</span>
+		<h5 class="lg:text-left text-center lg:mt-0 mt-4">Questo sito non usa cookie, per saperne di più visita la nostra <a href="" class="hover:opacity-75">Privacy Policy</a></h5>
+	</div>
+	<a href="mailto:theprawnsmanor@gmail.com" class="hover:opacity-75 lg:inline-block hidden">theprawnsmanor@gmail.com</a>
 </footer>
