@@ -37,6 +37,15 @@
         &-animate-text {
             animation: animate-text ease-in-out 7s forwards;
         }
+        &-line{
+            @apply relative overflow-hidden w-full;
+            span{
+                @apply absolute;
+            }
+        }
+
+
+
         @keyframes animate-home {
             0% {
                 opacity: 0;

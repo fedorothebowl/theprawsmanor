@@ -37,7 +37,7 @@ const { metaTitle , metaDescription} = Astro.props;
 	</head>
 
 	<body>
-		<main>
+		<main x-data="Gsap();">
 			<slot />
 		</main>
 		<script src="/src/assets/js/main.js"></script>

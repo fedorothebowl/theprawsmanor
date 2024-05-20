@@ -14,7 +14,12 @@ import Footer from "../components/Footer.astro";
             <img src="/images/homepage-hero.jpg" alt="Homepage hero - the prawns manor" class="block w-full object-cover prawns-animate-image h-full">
         </div>
         <div class="absolute lg:bottom-0 -bottom-[3px] w-full prawns-sfumatura-bassa h-2/3"></div>
-        <h1 class="absolute lg:bottom-10 bottom-2 lg:left-10 left-4 font-breve lg:text-[150px] text-[72px] leading-[60px] lg:leading-[122px] prawns-animate-text" >The <br>Prawn's Manor <br>Audiolibro</h1>
+        <div class="absolute w-full inset-0 flex justify-end flex-col">
+            <h1 class="lg:px-4 px-2.5 font-breve lg:text-[150px] text-[72px] leading-[60px] lg:leading-[122px] prawns-animate-text w-full lg:mb-40 mb-8" x-data="textAnimate();">
+                <div class="prawns-line lg:h-[130px] h-[60px] grid place-items-center"><span>The</span></div>
+                <div class="prawns-line lg:h-[130px] h-[60px] grid place-items-center"><span>Prawn's Manor</span></div>
+            </h1>
+        </div>
         <!-- <div class="prawns-header-hero-homepage w-4 absolute left-0 top-0 bg-c-blue"></div> -->
         <!-- <div class="prawns-header-hero-homepage w-4 absolute right-0 top-0 bg-c-blue"></div> -->
     </section>
@@ -35,10 +40,14 @@ import Footer from "../components/Footer.astro";
     
     <section class="lg:pt-[180px]">
         <div class="prawns-container">
-            <h4 class="lg:text-[32px] text-[20px]"><strong>Audiolibro</strong></h4>
-            <h3 class="text-c-orange uppercase lg:text-[130px] text-[48px] leading-none max-w-[1000px]"><strong class="extra">la leggenda dei 4</strong></h3>
+            <div>
+                <div class="block lg:text-[32px] text-[20px]">
+                    <span><strong>Audiolibro</strong></span>
+                </div>
+            </div>
+            <h3 class="text-c-orange uppercase lg:text-[130px] text-[48px] leading-none max-w-[1000px]"><strong class="extra">la leggenda dei quattro</strong></h3>
             <div class="mb-12">
-                <div class="lg:w-2/3line-clamp-4">Caro Avventuriero, se sei in procinto di leggere questa avventura, c'è una cosa che devi sapere riguardo al contenuto di quest'opera. La storia che si andrà a sviluppare nelle prossime pagine è stata scritta dopo aver giocato di ruolo in un mondo già esistente (subito riconoscibile) da cui abbiamo preso l'ambientazione e la storia di fondo, per poi aggiungerci i nostri personaggi e le nostre storie, trasformandola infine, come spesso accade nei GDR, in qualcosa di romanticamente personale. Tutto questo preambolo per dirvi che l'avventura che andrete a leggere avrà sì come sfondo una storia che magari già conoscete, ma che questo non deve spaventarvi nè deludervi, perchè il focus sarà sui personaggi e sulle loro vicende, entrambi presentati, come ogni buona campagna vuole, prima dell'inizio di tutto.</div>
+                <div class="lg:w-2/3 line-clamp-4 lg:mt-4 mt-2">Caro Avventuriero, se sei in procinto di leggere questa avventura, c'è una cosa che devi sapere riguardo al contenuto di quest'opera. La storia che si andrà a sviluppare nelle prossime pagine è stata scritta dopo aver giocato di ruolo in un mondo già esistente (subito riconoscibile) da cui abbiamo preso l'ambientazione e la storia di fondo, per poi aggiungerci i nostri personaggi e le nostre storie, trasformandola infine, come spesso accade nei GDR, in qualcosa di romanticamente personale. Tutto questo preambolo per dirvi che l'avventura che andrete a leggere avrà sì come sfondo una storia che magari già conoscete, ma che questo non deve spaventarvi nè deludervi, perchè il focus sarà sui personaggi e sulle loro vicende, entrambi presentati, come ogni buona campagna vuole, prima dell'inizio di tutto.</div>
                 <a href="/audiolibro" class="mt-2.5 text-[16px] text-c-orange flex space-x-2 items-center hover:translate-x-2 transition-transform duration-300">
                     <strong>Ascolta adesso</strong>
                     <svg class="w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +80,9 @@ import Footer from "../components/Footer.astro";
             <div class="absolute top-0 left-0 prawns-sfumatura-alta z-[1] w-full lg:h-60 h-1/3"></div>
             <div class="absolute bottom-0 left-0 prawns-sfumatura-bassa z-[1] w-full lg:h-60 h-1/3"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center w-full prawns-container text-center">
-                <span class="lg:text-[150px] text-[72px] uppercase lg:leading-[122px] leading-none lg:text-c-orange text-white z-[1]"><strong class="extra">Inizia ora</strong></span>
+                <span class="lg:text-[150px] text-[72px] uppercase lg:leading-[122px] leading-none lg:text-c-orange text-white z-[1]">
+                    <strong class="extra">Inizia ora</strong>
+                </span>
             </div>
         </a>
 
